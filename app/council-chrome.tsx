@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { sitePath } from "./site-paths";
 
 const councilLogo =
   "https://www.capitolareascouting.org/wp-content/uploads/2024/12/CAC-Header-logo-final_White-Horizontal.svg";
@@ -60,7 +61,7 @@ export function Breadcrumbs({ current, parent = "STEM Programs" }: { current?: s
     <div className="council-container breadcrumbs">
       <a href="https://www.capitolareascouting.org/">Home</a><span>›</span>
       <a href="https://www.capitolareascouting.org/activities/">Activities</a><span>›</span>
-      {current ? <><a href="/">{parent}</a><span>›</span><strong>{current}</strong></> : <strong>{parent}</strong>}
+      {current ? <><a href={sitePath("/")}>{parent}</a><span>›</span><strong>{current}</strong></> : <strong>{parent}</strong>}
     </div>
   );
 }
@@ -97,7 +98,7 @@ export function CouncilFooter() {
           </div>
           <div><h3>Join Scouting</h3><a href="https://www.capitolareascouting.org/join/">Find a program</a><a href="https://beascout.scouting.org/" target="_blank" rel="noreferrer">Find a unit</a><a href="https://www.capitolareascouting.org/volunteer/">Volunteer</a></div>
           <div><h3>Resources</h3><a href="https://www.capitolareascouting.org/activities/">Activities</a><a href="https://www.capitolareascouting.org/training/">Training</a><a href="https://www.capitolareascouting.org/resources/">Council resources</a></div>
-          <div><h3>STEM Programs</h3><a href="/">STEM overview</a><a href="/cosmic">COSMIC awards</a><a href="mailto:STEM@cacscouting.org">STEM@cacscouting.org</a></div>
+          <div><h3>STEM Programs</h3><a href={sitePath("/")}>STEM overview</a><a href={sitePath("/cosmic/")}>COSMIC awards</a><a href="mailto:STEM@cacscouting.org">STEM@cacscouting.org</a></div>
         </div>
         <div className="council-container footer-legal"><span>© Capitol Area Council, Scouting America</span><span>Prototype STEM program pages</span></div>
       </footer>

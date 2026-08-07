@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CalendarTab, CouncilFooter, CouncilHeader, InteriorHero, QuickLinks } from "./council-chrome";
+import { sitePath } from "./site-paths";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "STEM Programs | Capitol Area Council",
@@ -37,7 +40,7 @@ export default function Home() {
   return (
     <main>
       <CouncilHeader />
-      <InteriorHero title="STEM Programs" image="/media/stem-03.jpg" position="center 42%" />
+      <InteriorHero title="STEM Programs" image={sitePath("/media/stem-03.jpg")} position="center 42%" />
       <CalendarTab />
       <Breadcrumbs parent="STEM Programs" />
 
@@ -55,14 +58,14 @@ export default function Home() {
           </section>
 
           <div className="council-photo-row" aria-label="Scouts participating in council STEM activities">
-            <img src="/media/stem-01.jpg" alt="Scouts learning about computer hardware with an adult instructor" />
-            <img src="/media/stem-02.jpg" alt="A young Scout tries a space helmet display beside a model spacecraft" />
+            <img src={sitePath("/media/stem-01.jpg")} alt="Scouts learning about computer hardware with an adult instructor" />
+            <img src={sitePath("/media/stem-02.jpg")} alt="A young Scout tries a space helmet display beside a model spacecraft" />
           </div>
 
           <section id="cosmic" className="content-section">
             <h2>COSMIC Awards</h2>
             <div className="cosmic-intro">
-              <img src="/media/cosmic-patch.png" alt="COSMIC Capitol Area Council patch" />
+              <img src={sitePath("/media/cosmic-patch.png")} alt="COSMIC Capitol Area Council patch" />
               <div>
                 <p>The COSMIC program—<b>Challenges Of STEM: Mountaintop experiences In CAC</b>—is the council’s own STEM pathway for all youth, from Lions through the older youth programs.</p>
                 <ul>
@@ -70,7 +73,7 @@ export default function Home() {
                   <li><b>COSMIC Patch Awards:</b> round “pebble” patches earned for topic-focused STEM experiences.</li>
                   <li><b>COSMIC Pin Award:</b> an advanced, mentor-guided STEM journey comparable in depth to Supernova.</li>
                 </ul>
-                <a className="council-button" href="/cosmic">Learn more about COSMIC</a>
+                <a className="council-button" href={sitePath("/cosmic/")}>Learn more about COSMIC</a>
               </div>
             </div>
           </section>
@@ -97,7 +100,7 @@ export default function Home() {
 
         <QuickLinks>
           <a href="#overview">STEM programs</a>
-          <a href="/cosmic">COSMIC award program</a>
+          <a href={sitePath("/cosmic/")}>COSMIC award program</a>
           <a href="#events">STEM-focused events</a>
           <a href="https://www.capitolareascouting.org/activities/stem/stemboree/" target="_blank" rel="noreferrer">STEMboree</a>
           <a href="https://www.capitolareascouting.org/activities/stem/techlab/" target="_blank" rel="noreferrer">TechLab</a>

@@ -1,4 +1,22 @@
-# vinext-starter
+# Capitol Area Council STEM Website Prototype
+
+A council-styled prototype for Capitol Area Council STEM programs and the COSMIC STEM Award Program. The site includes the STEM landing page, COSMIC program information, council event links, and the official Google Drive PDF requirement links supplied for the project.
+
+## Live sites
+
+- GitHub Pages: `https://pbsargent.github.io/cac-stem-cosmic-prototype/`
+- Private review site: `https://cac-stem-cosmic-prototype.scouting44167.chatgpt.site/`
+
+## Local development
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+`pnpm run build` validates the Sites/Cloudflare build. GitHub Actions sets the repository path and produces a static export for GitHub Pages whenever `main` is updated.
+
+## Technical foundation
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CalendarTab, CouncilFooter, CouncilHeader, InteriorHero, QuickLinks } from "../council-chrome";
+import { sitePath } from "../site-paths";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "COSMIC STEM Award Program",
@@ -18,7 +21,7 @@ export default function CosmicPage() {
   return (
     <main>
       <CouncilHeader />
-      <InteriorHero title="COSMIC STEM Awards" image="/media/stem-02.jpg" position="center 42%" />
+      <InteriorHero title="COSMIC STEM Awards" image={sitePath("/media/stem-02.jpg")} position="center 42%" />
       <CalendarTab />
       <Breadcrumbs current="COSMIC STEM Awards" />
 
@@ -28,7 +31,7 @@ export default function CosmicPage() {
             <h2>COSMIC STEM Award Program</h2>
             <p className="page-intro"><b>Challenges Of STEM: Mountaintop experiences In CAC</b></p>
             <div className="cosmic-program-lead">
-              <img src="/media/cosmic-patch.png" alt="COSMIC Capitol Area Council patch" />
+              <img src={sitePath("/media/cosmic-patch.png")} alt="COSMIC Capitol Area Council patch" />
               <div>
                 <p>Whether you are a Cub just starting in STEM, a Scout working toward advanced awards, or an older youth planning a STEM career, COSMIC is the Capitol Area Council pathway to hands-on, real-world STEM adventures.</p>
                 <p>The program was developed by the council’s volunteer STEM committee to keep up with new discoveries, provide age-appropriate awards for every Scouting program, and offer local options that can grow with Central Texas interests and expertise.</p>
@@ -51,7 +54,7 @@ export default function CosmicPage() {
           <section id="system" className="content-section">
             <h2>How the COSMIC system works</h2>
             <div className="system-callout">
-              <img src="/media/cosmic-first-steps.png" alt="COSMIC First Steps base patch and pebble awards" />
+              <img src={sitePath("/media/cosmic-first-steps.png")} alt="COSMIC First Steps base patch and pebble awards" />
               <div>
                 <h3>The pebble patch concept</h3>
                 <ol>
@@ -79,7 +82,7 @@ export default function CosmicPage() {
             <h2>Getting started: COSMIC First Steps</h2>
             <p>Every Scout’s COSMIC journey begins with First Steps, regardless of age or program. Youth learn what STEM means, practice the scientific method and engineering design process, discover how the COSMIC system works, and recite the COSMIC STEM promise.</p>
             <div className="download-callout">
-              <img src="/media/cosmic-logo.png" alt="COSMIC First Steps emblem" />
+              <img src={sitePath("/media/cosmic-logo.png")} alt="COSMIC First Steps emblem" />
               <div><h3>COSMIC First Steps Base Patch</h3><p>Official requirements for every program level.</p></div>
               <a className="council-button" href="https://drive.google.com/file/d/1c_hDgf2h9yBMvNPALcHpl6-t5BgEo-NR/view" target="_blank" rel="noreferrer">Open PDF requirements</a>
             </div>
@@ -131,7 +134,7 @@ export default function CosmicPage() {
           <a href="#awards">Patch award library</a>
           <a href="#format">Award format</a>
           <a href="#volunteers">Counselors and mentors</a>
-          <a href="/">Back to STEM programs</a>
+          <a href={sitePath("/")}>Back to STEM programs</a>
         </QuickLinks>
       </div>
       <CouncilFooter />
