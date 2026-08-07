@@ -1,209 +1,140 @@
 import type { Metadata } from "next";
+import { Breadcrumbs, CalendarTab, CouncilFooter, CouncilHeader, InteriorHero, QuickLinks } from "../council-chrome";
 
 export const metadata: Metadata = {
   title: "COSMIC STEM Award Program",
-  description:
-    "Explore Capitol Area Council’s hands-on COSMIC STEM award pathway, requirements, and volunteer roles.",
+  description: "Explore Capitol Area Council’s hands-on COSMIC STEM award pathway, requirements, and volunteer roles.",
 };
 
 const awards = [
-  {
-    number: "01",
-    title: "Eclipses",
-    cub: "https://drive.google.com/file/d/1iTsAtCJu6t1uGkzVUC0i1Yh0h-7VwpgZ/view",
-    older: "https://drive.google.com/file/d/19Jowdr6epss5CduQEHXtb4I7KddZxG19/view",
-  },
-  {
-    number: "02",
-    title: "Biochemistry",
-    cub: "https://drive.google.com/file/d/163P7-T-AtW0XXXoraGsKj71gJonfzleg/view",
-    older: "https://drive.google.com/file/d/1ug1wZ139ipJWtjdGuSRVlRdjnzdRqqPC/view",
-  },
-  {
-    number: "03",
-    title: "Computer Hardware",
-    cub: "https://drive.google.com/file/d/10R3qtQhhAHxFYsjYov2ojtby5bNg75ef/view",
-    older: "https://drive.google.com/file/d/1Pssq4CtTvDNtB_XzpprbiJ7C6YfxD_cS/view",
-  },
-  {
-    number: "04",
-    title: "Radio Technologies",
-    cub: "https://drive.google.com/file/d/1_5oNdKsFrsS02alKEWwIi6XTkDGLSMOP/view",
-    older: "https://drive.google.com/file/d/1wxF5o44aqG9dx2eK5BlDyqg3lx-JPYdm/view",
-  },
-  {
-    number: "05",
-    title: "Mycology",
-    cub: "https://drive.google.com/file/d/1fWXY2pW0zVNyFeTFhO3GrpihpbkjZvrh/view",
-    older: "https://drive.google.com/file/d/13niSqaXN_1q7BNbtdHmjMWgyjNlJie4N/view",
-  },
+  ["01", "Eclipses", "https://drive.google.com/file/d/1iTsAtCJu6t1uGkzVUC0i1Yh0h-7VwpgZ/view", "https://drive.google.com/file/d/19Jowdr6epss5CduQEHXtb4I7KddZxG19/view"],
+  ["02", "Biochemistry", "https://drive.google.com/file/d/163P7-T-AtW0XXXoraGsKj71gJonfzleg/view", "https://drive.google.com/file/d/1ug1wZ139ipJWtjdGuSRVlRdjnzdRqqPC/view"],
+  ["03", "Computer Hardware", "https://drive.google.com/file/d/10R3qtQhhAHxFYsjYov2ojtby5bNg75ef/view", "https://drive.google.com/file/d/1Pssq4CtTvDNtB_XzpprbiJ7C6YfxD_cS/view"],
+  ["04", "Radio Technologies", "https://drive.google.com/file/d/1_5oNdKsFrsS02alKEWwIi6XTkDGLSMOP/view", "https://drive.google.com/file/d/1wxF5o44aqG9dx2eK5BlDyqg3lx-JPYdm/view"],
+  ["05", "Mycology", "https://drive.google.com/file/d/1fWXY2pW0zVNyFeTFhO3GrpihpbkjZvrh/view", "https://drive.google.com/file/d/13niSqaXN_1q7BNbtdHmjMWgyjNlJie4N/view"],
 ];
-
-function Header() {
-  return (
-    <>
-      <div className="utility-bar">
-        <div className="site-width utility-inner">
-          <span>Scouting America · Capitol Area Council</span>
-          <div><a href="https://www.capitolareascouting.org/join/">Join</a><a href="https://www.capitolareascouting.org/volunteer/">Volunteer</a><a href="mailto:STEM@cacscouting.org">STEM@cacscouting.org</a></div>
-        </div>
-      </div>
-      <header className="site-header">
-        <div className="site-width nav-wrap">
-          <a className="brand" href="/" aria-label="Capitol Area Council STEM home">
-            <span className="brand-mark" aria-hidden="true">S<span>+</span></span>
-            <span><b>CAC STEM</b><small>Curiosity belongs here</small></span>
-          </a>
-          <nav className="main-nav" aria-label="Main navigation">
-            <a href="/">STEM Home</a><a href="#about">About COSMIC</a><a href="#awards">Award Library</a><a className="nav-cta" href="mailto:STEM@cacscouting.org">Contact STEM</a>
-          </nav>
-        </div>
-      </header>
-    </>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="site-width footer-grid">
-        <div>
-          <a className="brand brand-light" href="/"><span className="brand-mark" aria-hidden="true">S<span>+</span></span><span><b>CAC STEM</b><small>Capitol Area Council</small></span></a>
-          <p>COSMIC is a locally developed Capitol Area Council program, built by STEM committee volunteers and Central Texas subject-matter experts.</p>
-        </div>
-        <div><h3>COSMIC</h3><a href="#system">How it works</a><a href="#awards">Award requirements</a><a href="#volunteer">Counselors & mentors</a></div>
-        <div><h3>Get in touch</h3><p>Questions, new award ideas, and volunteer interest are welcome.</p><a href="mailto:STEM@cacscouting.org">STEM@cacscouting.org →</a></div>
-      </div>
-      <div className="site-width footer-bottom"><span>Capitol Area Council COSMIC STEM</span><span>Prototype program experience</span></div>
-    </footer>
-  );
-}
 
 export default function CosmicPage() {
   return (
-    <main className="cosmic-page">
-      <Header />
-      <section className="hero cosmic-hero">
-        <div className="site-width cosmic-hero-grid">
-          <div>
-            <div className="eyebrow light"><span /> CAPITOL AREA COUNCIL ORIGINAL</div>
-            <h1>Reach your<br /><em>STEM peak.</em></h1>
-            <p className="hero-lede">Whether you’re a Cub taking your first step or an older youth planning a STEM career, COSMIC turns curiosity into hands-on, real-world adventure.</p>
-            <div className="hero-actions"><a className="button button-primary" href="#awards">Browse awards <span>↓</span></a><a className="button button-white" href="#system">See how it works <span>→</span></a></div>
-            <div className="program-chips"><span>Lions through Arrow of Light</span><span>Scouts BSA</span><span>Older youth programs</span></div>
-          </div>
-          <div className="cosmic-hero-art">
-            <div className="patch-rings" aria-hidden="true" />
-            <img src="/media/cosmic-patch.png" alt="COSMIC base patch featuring a night-sky telescope scene" />
-            <span className="orbit-label label-one">Explore<br />12 topics</span>
-            <span className="orbit-label label-two">Built in<br />Central Texas</span>
-          </div>
-        </div>
-      </section>
+    <main>
+      <CouncilHeader />
+      <InteriorHero title="COSMIC STEM Awards" image="/media/stem-02.jpg" position="center 42%" />
+      <CalendarTab />
+      <Breadcrumbs current="COSMIC STEM Awards" />
 
-      <nav className="cosmic-subnav" aria-label="COSMIC page sections"><div className="site-width"><a href="#about">What is COSMIC?</a><a href="#system">How it works</a><a href="#participants">Who can participate?</a><a href="#awards">Award library</a><a href="#format">Award format</a><a href="#volunteer">Volunteer roles</a></div></nav>
-
-      <section className="section cosmic-overview" id="about">
-        <div className="site-width overview-grid">
-          <div className="overview-copy">
-            <div className="eyebrow dark"><span /> CHALLENGES OF STEM</div>
-            <h2>A local pathway built to keep moving.</h2>
-            <p className="lead">COSMIC stands for <b>Challenges Of STEM: Mountaintop experiences In CAC.</b></p>
-            <p>The name was chosen by Scouts, then shaped into an acronym that reflects the program’s goal: new STEM challenges that become peak experiences for participants.</p>
-            <p>Created by the council’s volunteer STEM committee, COSMIC can respond quickly to discoveries, local expertise, special events, and the questions young people are asking now.</p>
-          </div>
-          <div className="principle-grid">
-            <article className="principle"><span>01</span><h3>Current</h3><p>New topics can grow from emerging discoveries and youth interests.</p></article>
-            <article className="principle"><span>02</span><h3>Hands-on</h3><p>Every award centers doing, investigating, building, or demonstrating.</p></article>
-            <article className="principle"><span>03</span><h3>For everyone</h3><p>Age-appropriate pathways serve kindergarten Lions through age 20.</p></article>
-            <article className="principle"><span>04</span><h3>Locally powered</h3><p>Central Texas volunteers and subject experts help the program evolve.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section system-section" id="system">
-        <div className="site-width system-grid">
-          <div className="system-image"><img src="/media/cosmic-first-steps.png" alt="COSMIC First Steps base patch and sample pebble patches" /></div>
-          <div className="system-copy">
-            <div className="eyebrow dark"><span /> THE PEBBLE PATCH SYSTEM</div>
-            <h2>Start at the base.<br />Build your own path.</h2>
-            <p>Every Scout first earns the hexagonal First Steps base patch. Topic-focused round “pebble” patches then attach around the center, with room for twelve different explorations.</p>
-            <div className="system-list">
-              <div><b>01</b><span><strong>Earn First Steps</strong>Learn what STEM is, practice scientific and engineering thinking, and make the COSMIC STEM promise.</span></div>
-              <div><b>02</b><span><strong>Choose any topic</strong>Pebble patches may be earned in any order at unit meetings, den meetings, or council events.</span></div>
-              <div><b>03</b><span><strong>Explore with a counselor</strong>Complete hands-on requirements under a qualified COSMIC Counselor or Mentor.</span></div>
-              <div><b>04</b><span><strong>Go for the pin</strong>The advanced mentor-guided COSMIC Pin is a long-term journey, coming soon.</span></div>
+      <div className="council-container council-page-grid">
+        <article className="council-content">
+          <section id="about">
+            <h2>COSMIC STEM Award Program</h2>
+            <p className="page-intro"><b>Challenges Of STEM: Mountaintop experiences In CAC</b></p>
+            <div className="cosmic-program-lead">
+              <img src="/media/cosmic-patch.png" alt="COSMIC Capitol Area Council patch" />
+              <div>
+                <p>Whether you are a Cub just starting in STEM, a Scout working toward advanced awards, or an older youth planning a STEM career, COSMIC is the Capitol Area Council pathway to hands-on, real-world STEM adventures.</p>
+                <p>The program was developed by the council’s volunteer STEM committee to keep up with new discoveries, provide age-appropriate awards for every Scouting program, and offer local options that can grow with Central Texas interests and expertise.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <p>The name COSMIC was chosen from Scout suggestions and a Scout poll. The acronym came later, reflecting the program’s goal: to provide new STEM challenges and make them peak experiences for Capitol Area Council participants.</p>
+          </section>
 
-      <section className="section participants-section" id="participants">
-        <div className="site-width">
-          <div className="eyebrow light"><span /> ONE PROGRAM · AGE-APPROPRIATE PATHS</div>
-          <h2>Who can participate?</h2>
-          <div className="participant-grid">
-            <article className="participant-card"><span>K–5</span><h3>Cub Scouts</h3><p>Lions through Arrow of Light focus on “learn about” activities, simple vocabulary, movement, models, and strong adult guidance.</p></article>
-            <article className="participant-card"><span>11–17</span><h3>Scouts BSA</h3><p>Scouts take on more independent investigations, deeper vocabulary, reflection, and teaching others through the EDGE method.</p></article>
-            <article className="participant-card"><span>14–20</span><h3>Older youth</h3><p>Venturers, Sea Scouts, and Explorers can pursue advanced requirements tailored to their program and level of experience.</p></article>
-          </div>
-        </div>
-      </section>
+          <section id="why" className="content-section">
+            <h2>Why a new STEM program?</h2>
+            <p>Interest in STEM across the Capitol Area Council is extremely high. When national support for the Nova and Supernova programs ended, the CAC STEM Committee saw an opportunity to build a flexible, expandable local program that:</p>
+            <ul>
+              <li>Supports all levels, including Lions and Tigers.</li>
+              <li>Adds new topics when local experts and special events make them possible.</li>
+              <li>Uses a simple, repeatable structure that feels familiar to leaders.</li>
+              <li>Can respond quickly to new discoveries and youth interests.</li>
+            </ul>
+          </section>
 
-      <section className="section awards-section" id="awards">
-        <div className="site-width">
-          <div className="awards-intro">
-            <div><div className="eyebrow dark"><span /> REQUIREMENT LIBRARY</div><h2>Choose your next challenge.</h2></div>
-            <p>Open the official PDF for your program level. COSMIC patch awards are introductory explorations that may take a few hours or several days to complete.</p>
-          </div>
-          <article className="first-steps-card">
-            <img src="/media/cosmic-logo.png" alt="COSMIC First Steps emblem" />
-            <div><small>Everyone begins here</small><h3>COSMIC First Steps</h3><p>Learn what STEM means, practice the scientific method and engineering design process, and discover how COSMIC works.</p></div>
-            <a className="button button-white" href="https://drive.google.com/file/d/1c_hDgf2h9yBMvNPALcHpl6-t5BgEo-NR/view" target="_blank" rel="noreferrer">Open requirements <span>↗</span></a>
-          </article>
-          <div className="award-grid">
-            {awards.map((award) => (
-              <article className="award-card" key={award.title}>
-                <span>{award.number}</span><small>COSMIC PATCH AWARD {award.number}</small><h3>{award.title}</h3>
-                <div className="award-links"><a href={award.cub} target="_blank" rel="noreferrer">Cub requirements ↗</a><a href={award.older} target="_blank" rel="noreferrer">Scouts BSA + older youth ↗</a></div>
-                <p className="award-status">Official 2026 requirement PDFs</p>
-              </article>
-            ))}
-          </div>
-          <div className="coming-grid">
-            <article className="coming-card"><h3>Microprocessors</h3><span>Coming soon</span></article>
-            <article className="coming-card"><h3>Houston Toad</h3><span>Coming soon</span></article>
-            <article className="coming-card"><h3>And many more…</h3><span>Propose a new topic</span></article>
-          </div>
-        </div>
-      </section>
+          <section id="system" className="content-section">
+            <h2>How the COSMIC system works</h2>
+            <div className="system-callout">
+              <img src="/media/cosmic-first-steps.png" alt="COSMIC First Steps base patch and pebble awards" />
+              <div>
+                <h3>The pebble patch concept</h3>
+                <ol>
+                  <li>Every Scout first earns the hexagonal <b>COSMIC First Steps Base Patch</b>.</li>
+                  <li>Each completed topic award adds a round “pebble” patch around the base.</li>
+                  <li>The backing holds twelve different patches, and topics may be earned in any order.</li>
+                  <li>Qualified COSMIC Counselors or Mentors supervise awards at unit and council events.</li>
+                </ol>
+              </div>
+            </div>
+            <p>The base and individual patch awards are introductory explorations that may take hours or several days. The advanced COSMIC Pin, coming soon, is a long-term mentor-guided commitment that may take months.</p>
+          </section>
 
-      <section className="section format-section" id="format">
-        <div className="site-width">
-          <div className="eyebrow dark"><span /> A FAMILIAR RHYTHM</div><h2>Every award follows<br />the same format.</h2>
-          <div className="format-grid">
-            <article className="format-card"><h3>Prerequisites</h3><p>Connect the topic to an adventure, merit badge, or short introductory activity.</p></article>
-            <article className="format-card"><h3>Safety</h3><p>Practice topic-specific and age-appropriate Scouting safety expectations.</p></article>
-            <article className="format-card"><h3>Vocabulary</h3><p>Define, draw, or use key terms in context to show understanding.</p></article>
-            <article className="format-card"><h3>Do</h3><p>Carry out experiments, models, demonstrations, visits, coding, or research.</p></article>
-            <article className="format-card"><h3>Discuss</h3><p>Reflect with a counselor on what worked, what was fun, and what could improve.</p></article>
-            <article className="format-card"><h3>EDGE</h3><p>Scouts BSA and older youth explain, demonstrate, guide, and enable others.</p></article>
-          </div>
-        </div>
-      </section>
+          <section id="participants" className="content-section">
+            <h2>Who can participate?</h2>
+            <p>COSMIC is open to all Capitol Area Council youth programs:</p>
+            <ul>
+              <li><b>Cub Scouts</b>—Lions through Arrow of Light—focus on “learn about” activities with strong adult guidance, simple vocabulary, movement, and models.</li>
+              <li><b>Scouts BSA</b> complete more independent investigations, use deeper vocabulary, and teach others through the EDGE method.</li>
+              <li><b>Venturing, Sea Scouting, and Exploring</b> participants ages 14–20 follow requirements adapted for older youth.</li>
+            </ul>
+          </section>
 
-      <section className="section volunteer-section" id="volunteer">
-        <div className="site-width volunteer-grid">
-          <div><div className="eyebrow dark"><span /> ADULT SUPPORT</div><h2>Help Scouts reach the next summit.</h2><p>Questions about counselor or mentor roles? The STEM Committee can help you choose the right path.</p><a className="button button-primary" href="mailto:STEM@cacscouting.org">Contact the STEM Committee <span>→</span></a></div>
-          <div className="volunteer-cards">
-            <article className="volunteer-card"><h3>COSMIC Counselors</h3><p>Deliver First Steps and topic patch awards in group settings.</p><ul><li>Registered adult age 21+ with current Safeguarding Youth Training</li><li>Follow award requirements as written</li><li>Merit badge counselor and council COSMIC training are recommended</li><li>Report completed patches before purchase at the council Scout Shop</li></ul></article>
-            <article className="volunteer-card"><h3>COSMIC Mentors</h3><p>Guide advanced COSMIC Pin candidates through long-term investigations.</p><ul><li>Subject-matter expertise through education, career, or serious hobby</li><li>Registered adult age 21+ with current Safeguarding Youth Training</li><li>Merit badge counselor and in-person COSMIC training required</li><li>STEM Committee application and approval required</li></ul></article>
-          </div>
-        </div>
-      </section>
+          <section id="first-steps" className="content-section">
+            <h2>Getting started: COSMIC First Steps</h2>
+            <p>Every Scout’s COSMIC journey begins with First Steps, regardless of age or program. Youth learn what STEM means, practice the scientific method and engineering design process, discover how the COSMIC system works, and recite the COSMIC STEM promise.</p>
+            <div className="download-callout">
+              <img src="/media/cosmic-logo.png" alt="COSMIC First Steps emblem" />
+              <div><h3>COSMIC First Steps Base Patch</h3><p>Official requirements for every program level.</p></div>
+              <a className="council-button" href="https://drive.google.com/file/d/1c_hDgf2h9yBMvNPALcHpl6-t5BgEo-NR/view" target="_blank" rel="noreferrer">Open PDF requirements</a>
+            </div>
+          </section>
 
-      <section className="section contact-band"><div className="site-width contact-inner"><div><span>HAVE A NEW AWARD IDEA?</span><h2>COSMIC grows when<br />our community does.</h2></div><a className="button button-primary" href="mailto:STEM@cacscouting.org">Share your idea <span>→</span></a></div></section>
-      <Footer />
+          <section id="awards" className="content-section">
+            <h2>COSMIC patch award requirements</h2>
+            <p>Each topic has requirements matched to the participant’s program level. Select the official PDF for Cub Scouts or for Scouts BSA and older youth programs.</p>
+            <div className="requirements-table" role="table" aria-label="COSMIC award requirement PDFs">
+              <div className="requirements-header" role="row"><span>Patch award</span><span>Cub Scouts</span><span>Scouts BSA &amp; older youth</span></div>
+              {awards.map(([number, title, cub, older]) => (
+                <div className="requirements-row" role="row" key={title}>
+                  <span><small>COSMIC {number}</small><b>{title}</b></span>
+                  <a href={cub} target="_blank" rel="noreferrer">Open Cub PDF</a>
+                  <a href={older} target="_blank" rel="noreferrer">Open older-youth PDF</a>
+                </div>
+              ))}
+            </div>
+            <div className="coming-soon"><p><b>Coming soon:</b> Microprocessors · Houston Toad · COSMIC Pin awards · and more</p></div>
+          </section>
+
+          <section id="format" className="content-section">
+            <h2>Every COSMIC award follows the same format</h2>
+            <div className="format-list">
+              <div><b>Prerequisites</b><p>Connect to an existing adventure, merit badge, or short introductory activity.</p></div>
+              <div><b>Safety</b><p>Cover topic-specific and age-appropriate Scouting safety expectations.</p></div>
+              <div><b>Vocabulary</b><p>Define, draw, or use key terms in context.</p></div>
+              <div><b>Do</b><p>Complete experiments, models, demonstrations, visits, coding, or research.</p></div>
+              <div><b>Discuss</b><p>Reflect with a counselor on what was learned and what could improve.</p></div>
+              <div><b>EDGE</b><p>Scouts BSA and older youth explain, demonstrate, guide, and enable others.</p></div>
+            </div>
+          </section>
+
+          <section id="volunteers" className="content-section">
+            <h2>Adult volunteers supporting COSMIC</h2>
+            <h3>COSMIC Counselors</h3>
+            <p>Counselors deliver First Steps and topic patch awards. They must be registered adults age 21 or older with current Safeguarding Youth Training and are expected to follow the published requirements. Merit badge counselor and council COSMIC training are recommended.</p>
+            <h3>COSMIC Mentors</h3>
+            <p>Mentors guide advanced COSMIC Pin candidates. Mentors must have STEM subject-matter expertise, be registered adults age 21 or older, complete required training, and receive STEM Committee approval.</p>
+            <a className="council-button" href="mailto:STEM@cacscouting.org">Contact the STEM Committee</a>
+          </section>
+        </article>
+
+        <QuickLinks>
+          <a href="#about">What is COSMIC?</a>
+          <a href="#system">How the system works</a>
+          <a href="#participants">Who can participate?</a>
+          <a href="#first-steps">First Steps requirements</a>
+          <a href="#awards">Patch award library</a>
+          <a href="#format">Award format</a>
+          <a href="#volunteers">Counselors and mentors</a>
+          <a href="/">Back to STEM programs</a>
+        </QuickLinks>
+      </div>
+      <CouncilFooter />
     </main>
   );
 }
